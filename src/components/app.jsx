@@ -14,7 +14,7 @@ class App extends Component {
       selectedGif: "5tHu9qbWUymE8"
     };
 
-    this.search("homer thinking");
+    this.search("coding");
   }
 
   search = (query) => {
@@ -29,6 +29,10 @@ class App extends Component {
     });
   }
 
+  changeSelectedGif = (id) => {
+    this.setState({ selectedGif: id });
+  }
+
   render() {
     return (
       <div>
@@ -39,7 +43,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} />
+          <GifList gifs={this.state.gifs} changeSelectedGif={this.changeSelectedGif} />
         </div>
       </div>
     );
